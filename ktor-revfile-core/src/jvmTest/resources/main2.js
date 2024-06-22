@@ -1,0 +1,1 @@
+window.myScriptVersion = 2

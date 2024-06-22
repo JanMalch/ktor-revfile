@@ -1,0 +1,14 @@
+public final class io/github/janmalch/ktor/revfile/html/HtmlKt {
+	public static final fun getUseSubresourceIntegrity (Lio/github/janmalch/ktor/revfile/RevFileConfig;)Z
+	public static final fun script (Lkotlinx/html/FlowOrMetaDataOrPhrasingContent;Lio/github/janmalch/ktor/revfile/RevisionedFile;Lkotlinx/html/ScriptCrossorigin;ZLkotlin/jvm/functions/Function1;)V
+	public static synthetic fun script$default (Lkotlinx/html/FlowOrMetaDataOrPhrasingContent;Lio/github/janmalch/ktor/revfile/RevisionedFile;Lkotlinx/html/ScriptCrossorigin;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun setUseSubresourceIntegrity (Lio/github/janmalch/ktor/revfile/RevFileConfig;Z)V
+	public static final fun stylesheet (Lkotlinx/html/HEAD;Lio/github/janmalch/ktor/revfile/RevisionedFile;Lkotlinx/html/ScriptCrossorigin;ZLkotlin/jvm/functions/Function1;)V
+	public static synthetic fun stylesheet$default (Lkotlinx/html/HEAD;Lio/github/janmalch/ktor/revfile/RevisionedFile;Lkotlinx/html/ScriptCrossorigin;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+}
+
+public final class io/github/janmalch/ktor/revfile/html/RevFileHtml {
+	public static final field INSTANCE Lio/github/janmalch/ktor/revfile/html/RevFileHtml;
+	public final fun getUseSubresourceIntegrity ()Z
+}
+

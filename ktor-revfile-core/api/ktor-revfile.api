@@ -1,0 +1,55 @@
+public final class io/github/janmalch/ktor/revfile/CustomFileKt {
+	public static final fun create (Lio/github/janmalch/ktor/revfile/RevFile;Ljava/lang/String;Lio/ktor/http/ContentType;Lkotlin/jvm/functions/Function0;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public static synthetic fun create$default (Lio/github/janmalch/ktor/revfile/RevFile;Ljava/lang/String;Lio/ktor/http/ContentType;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+}
+
+public final class io/github/janmalch/ktor/revfile/LocalRegisterableFile_jvmKt {
+	public static final fun file (Lio/github/janmalch/ktor/revfile/RevFile;Ljava/io/File;Lio/ktor/http/ContentType;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public static synthetic fun file$default (Lio/github/janmalch/ktor/revfile/RevFile;Ljava/io/File;Lio/ktor/http/ContentType;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+}
+
+public final class io/github/janmalch/ktor/revfile/RevFile {
+	public static final field INSTANCE Lio/github/janmalch/ktor/revfile/RevFile;
+	public final fun getPlugin ()Lio/ktor/server/application/ApplicationPlugin;
+}
+
+public final class io/github/janmalch/ktor/revfile/RevFile$Configuration {
+	public fun <init> ()V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Z
+	public final fun copy (Ljava/lang/String;Z)Lio/github/janmalch/ktor/revfile/RevFile$Configuration;
+	public static synthetic fun copy$default (Lio/github/janmalch/ktor/revfile/RevFile$Configuration;Ljava/lang/String;ZILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevFile$Configuration;
+	public final fun eager ([Lio/github/janmalch/ktor/revfile/RevisionedFile;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCacheControl ()Ljava/lang/String;
+	public final fun getPath ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun isETagEnabled ()Z
+	public final fun setCacheControl (Ljava/lang/String;)V
+	public final fun setETagEnabled (Z)V
+	public final fun setPath (Ljava/lang/String;)V
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/janmalch/ktor/revfile/RevFile$Registry : java/lang/Iterable, kotlin/jvm/internal/markers/KMappedMarker {
+	public static final field INSTANCE Lio/github/janmalch/ktor/revfile/RevFile$Registry;
+	public final fun getPath ()Ljava/lang/String;
+	public final fun getSize ()I
+	public fun iterator ()Ljava/util/Iterator;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/janmalch/ktor/revfile/RevisionedFile {
+	public final fun getContentType ()Lio/ktor/http/ContentType;
+	public final fun getIntegrity ()Ljava/lang/String;
+	public final fun getPath ()Ljava/lang/String;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/janmalch/ktor/revfile/UriRegisterableFile_jvmKt {
+	public static final fun resource (Lio/github/janmalch/ktor/revfile/RevFile;Ljava/lang/String;Ljava/lang/String;Lio/ktor/http/ContentType;Ljava/lang/ClassLoader;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public static synthetic fun resource$default (Lio/github/janmalch/ktor/revfile/RevFile;Ljava/lang/String;Ljava/lang/String;Lio/ktor/http/ContentType;Ljava/lang/ClassLoader;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public static final fun uri (Lio/github/janmalch/ktor/revfile/RevFile;Ljava/net/URI;Ljava/lang/String;Lio/ktor/http/ContentType;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public static synthetic fun uri$default (Lio/github/janmalch/ktor/revfile/RevFile;Ljava/net/URI;Ljava/lang/String;Lio/ktor/http/ContentType;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+}
+
