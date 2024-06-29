@@ -3,7 +3,7 @@ plugins {
 }
 
 allprojects {
-    group = "io.github.janmalch.ktor.revfile"
+    group = "io.github.janmalch" // must match verified namespace in Maven Central
     version = "0.0.1-alpha.1"
 }
 
