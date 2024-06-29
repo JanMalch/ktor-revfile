@@ -5,13 +5,22 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_call:
 
 permissions:
   contents: read
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - target: jvmTest
+            os: ubuntu-latest
+          - target: linuxX64Test
+            os: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
     steps:
     - uses: actions/checkout@v4
     - name: Validate Gradle Wrapper
@@ -28,6 +37,8 @@ jobs:
         distribution: 'temurin'
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
+      with:
+        arguments: ${{ matrix.target }}
     - name: Assemble with Gradle
       run: ./gradlew assemble
     - name: Verify binary compatibility
