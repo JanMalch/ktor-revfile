@@ -48,7 +48,7 @@ var RevFileConfig.useSubresourceIntegrity: Boolean
  *
  * @param file the revisioned file
  * @param crossorigin value for the `crossorigin` attribute. Default is `null`.
- * @param integrity whether the `integrity` attribute should be set. Default can be configured with [useSubresourceIntegrity] while installing the [RevFile.Plugin].
+ * @param integrity whether the `integrity` attribute should be set. Default can be configured with [useSubresourceIntegrity] while installing the [RevFilePlugin].
  * @param block optional block to further customize the `<script>` tag
  */
 @HtmlTagMarker
@@ -75,7 +75,7 @@ fun FlowOrMetaDataOrPhrasingContent.script(
  *
  * @param file the revisioned file
  * @param crossorigin value for the `crossorigin` attribute. Default is `null`.
- * @param integrity whether the `integrity` attribute should be set. Default can be configured with [useSubresourceIntegrity] while installing the [RevFile.Plugin].
+ * @param integrity whether the `integrity` attribute should be set. Default can be configured with [useSubresourceIntegrity] while installing the [RevFilePlugin].
  * @param block optional block to further customize the `<link>` tag
  */
 @HtmlTagMarker
