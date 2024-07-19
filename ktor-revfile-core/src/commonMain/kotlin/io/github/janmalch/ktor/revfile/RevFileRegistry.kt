@@ -116,11 +116,11 @@ abstract class RevFileRegistry(path: String) : WriteableRevFileRegistry {
     private val path: String = '/' + path.trim('/') + '/'
     private val files = mutableMapOf<String, RevisionedFile>()
 
-    override fun size(): Int = files.size
+    final override fun size(): Int = files.size
 
-    override operator fun get(path: String): RevisionedFile? = files[path]
+    final override operator fun get(path: String): RevisionedFile? = files[path]
 
-    override fun register(entry: WriteableRevFileRegistry.Entry): RevisionedFile {
+    final override fun register(entry: WriteableRevFileRegistry.Entry): RevisionedFile {
         require(entry.originalName.isNotBlank()) {
             "Cannot register a file with a blank name '${entry.originalName}': $entry"
         }
@@ -138,6 +138,6 @@ abstract class RevFileRegistry(path: String) : WriteableRevFileRegistry {
         return revFile
     }
 
-    override fun iterator(): Iterator<RevisionedFile> = files.values.toTypedArray().iterator()
+    final override fun iterator(): Iterator<RevisionedFile> = files.values.toTypedArray().iterator()
     override fun toString(): String = "RevFileRegistry(path='$path', size=${size()})"
 }

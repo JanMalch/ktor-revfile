@@ -35,10 +35,10 @@ public final class io/github/janmalch/ktor/revfile/RevFilePluginKt {
 
 public abstract class io/github/janmalch/ktor/revfile/RevFileRegistry : io/github/janmalch/ktor/revfile/WriteableRevFileRegistry {
 	public fun <init> (Ljava/lang/String;)V
-	public fun get (Ljava/lang/String;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
-	public fun iterator ()Ljava/util/Iterator;
-	public fun register (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry$Entry;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
-	public fun size ()I
+	public final fun get (Ljava/lang/String;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public final fun iterator ()Ljava/util/Iterator;
+	public final fun register (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry$Entry;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public final fun size ()I
 	public fun toString ()Ljava/lang/String;
 }
 
