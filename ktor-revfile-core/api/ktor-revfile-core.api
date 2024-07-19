@@ -4,8 +4,8 @@ public final class io/github/janmalch/ktor/revfile/CustomFileKt {
 }
 
 public final class io/github/janmalch/ktor/revfile/LocalRegisterableFile_jvmKt {
-	public static final fun file (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/io/File;Lio/ktor/http/ContentType;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
-	public static synthetic fun file$default (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/io/File;Lio/ktor/http/ContentType;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public static final fun file (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/io/File;Lio/ktor/http/ContentType;Ljava/lang/String;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public static synthetic fun file$default (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/io/File;Lio/ktor/http/ContentType;Ljava/lang/String;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
 }
 
 public abstract interface class io/github/janmalch/ktor/revfile/ReadableRevFileRegistry : java/lang/Iterable, kotlin/jvm/internal/markers/KMappedMarker {
@@ -47,6 +47,13 @@ public final class io/github/janmalch/ktor/revfile/RevisionedFile {
 	public final fun getIntegrity ()Ljava/lang/String;
 	public final fun getPath ()Ljava/lang/String;
 	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/janmalch/ktor/revfile/SourceFileKt {
+	public static final fun source (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/lang/String;Lio/ktor/http/ContentType;Lkotlin/jvm/functions/Function0;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public static final fun source (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Lkotlinx/io/files/Path;Lio/ktor/http/ContentType;Ljava/lang/String;Lkotlinx/io/files/FileSystem;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public static synthetic fun source$default (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/lang/String;Lio/ktor/http/ContentType;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public static synthetic fun source$default (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Lkotlinx/io/files/Path;Lio/ktor/http/ContentType;Ljava/lang/String;Lkotlinx/io/files/FileSystem;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
 }
 
 public final class io/github/janmalch/ktor/revfile/UriRegisterableFile_jvmKt {

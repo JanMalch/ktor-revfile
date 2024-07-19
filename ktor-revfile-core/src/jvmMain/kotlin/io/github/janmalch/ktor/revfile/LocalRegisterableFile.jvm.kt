@@ -18,9 +18,10 @@ private data class LocalFileEntry(
 fun WriteableRevFileRegistry.file(
     file: File,
     contentType: ContentType = ContentType.defaultForFile(file),
+    name: String = file.name,
 ): RevisionedFile =
     LocalFileEntry(
-        originalName = file.name,
+        originalName = name,
         contentType = contentType,
         content = LocalFileContent(file, contentType),
     ).let(this::register)
