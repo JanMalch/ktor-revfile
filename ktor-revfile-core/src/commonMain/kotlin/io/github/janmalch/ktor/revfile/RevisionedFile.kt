@@ -6,9 +6,11 @@ import io.ktor.http.content.*
 /**
  * Describes a revisioned file, meaning its [path] is unique based on its content.
  *
- * Revisioned files can be created by using one of the various extension functions on a [WriteableRevFileRegistry].
- * [create] is the most general function to create a revisioned file.
- * Depending on your platform more convenient factories like [resource] or [file] are available.
+ * Revisioned files must be created by using one of the various extension functions on [WriteableRevFileRegistry].
+ * [create] is the most general function to create a revisioned file,
+ * while [source] provides interop with `kotlinx.io`.
+ *
+ * Depending on your platform, convenient factories like [resource] or [file] are also available.
  *
  * ```kotlin
  * package com.example

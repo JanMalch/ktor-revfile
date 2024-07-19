@@ -4,7 +4,8 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(libs.okio) // FIXME: migrate to kotlinx-io with ktor v3.0.0(-beta-2)
+    commonMainImplementation(libs.okio) // used for streaming hashes
+    commonMainImplementation(libs.kotlinx.io)
     commonMainImplementation(libs.ktor.server.core)
     commonMainImplementation(libs.ktor.utils)
 

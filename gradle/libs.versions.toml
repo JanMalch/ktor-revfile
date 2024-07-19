@@ -4,15 +4,17 @@ dokka = "1.9.20"
 kotlin = "2.0.0"
 kotlinx-html = "0.11.0"
 kover = "0.8.1"
-ktor = "2.3.12"
+ktor = "3.0.0-beta-2"
 nexus-publish = "2.0.0-rc-1" # FIXME: remove nexus
 okio = "3.9.0"
+io = "0.5.1"
 slf4j = "2.0.13"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 nexus-publish = { module = "io.github.gradle-nexus.publish-plugin:io.github.gradle-nexus.publish-plugin.gradle.plugin", version.ref = "nexus-publish" }
 kotlinx-html = { module = "org.jetbrains.kotlinx:kotlinx-html", version.ref = "kotlinx-html" }
+kotlinx-io = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version.ref = "io" }
 ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
 ktor-server-html-builder = { module = "io.ktor:ktor-server-html-builder", version.ref = "ktor" }
 ktor-server-core-jvm = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
