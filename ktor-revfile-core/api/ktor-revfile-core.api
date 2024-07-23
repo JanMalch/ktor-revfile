@@ -61,6 +61,8 @@ public final class io/github/janmalch/ktor/revfile/UriRegisterableFile_jvmKt {
 	public static synthetic fun resource$default (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/lang/String;Ljava/lang/String;Lio/ktor/http/ContentType;Ljava/lang/ClassLoader;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
 	public static final fun uri (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/net/URI;Ljava/lang/String;Lio/ktor/http/ContentType;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
 	public static synthetic fun uri$default (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/net/URI;Ljava/lang/String;Lio/ktor/http/ContentType;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public static final fun url (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/net/URL;Ljava/lang/String;Lio/ktor/http/ContentType;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public static synthetic fun url$default (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/net/URL;Ljava/lang/String;Lio/ktor/http/ContentType;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
 }
 
 public abstract interface class io/github/janmalch/ktor/revfile/WriteableRevFileRegistry : io/github/janmalch/ktor/revfile/ReadableRevFileRegistry {

@@ -3,6 +3,7 @@ package io.github.janmalch.ktor.revfile
 import io.ktor.http.*
 import io.ktor.http.content.*
 import java.net.URI
+import java.net.URL
 
 private data class UriEntry(
     override val originalName: String,
@@ -22,6 +23,15 @@ fun WriteableRevFileRegistry.uri(
     contentType = contentType,
     content = URIFileContent(uri, contentType),
 ).let(this::register)
+
+/**
+ * Creates a new [RevisionedFile] from the given URL and adds it to this [WriteableRevFileRegistry].
+ */
+fun WriteableRevFileRegistry.url(
+    url: URL,
+    name: String = url.toString().substringAfterLast('/'),
+    contentType: ContentType = ContentType.defaultForFilePath(url.path),
+): RevisionedFile = uri(uri = url.toURI(), name = name, contentType = contentType)
 
 /**
  * Creates a new [RevisionedFile] from the given JVM resource and adds it to this [WriteableRevFileRegistry].
@@ -52,16 +62,16 @@ fun WriteableRevFileRegistry.uri(
  * ```
  *
  * @param resource the name of the resource to load
- * @param name the name to be used for the file
- * @param contentType optionally force a content type, will be inferred otherwise
+ * @param name the name to be used for the revisioned file
+ * @param contentType the content type to be used for the revisioned file
  * @param classLoader the `ClassLoader` to use for loading the resource
  * @see ClassLoader.getResource
- * @throws IllegalArgumentException if the resource cannot be loaded.
+ * @throws IllegalArgumentException if the resource cannot be loaded
  */
 fun WriteableRevFileRegistry.resource(
     resource: String,
     name: String = resource.substringAfterLast('/'),
-    contentType: ContentType? = null,
+    contentType: ContentType = ContentType.defaultForFilePath(resource),
     // TODO: see if this class loader makes any sense
     classLoader: ClassLoader = checkNotNull(this::class.java.classLoader) {
         "Failed to get a class loader for loading resource '$resource'."
