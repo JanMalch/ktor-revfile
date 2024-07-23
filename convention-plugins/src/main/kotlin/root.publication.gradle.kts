@@ -4,7 +4,7 @@ plugins {
 
 allprojects {
     group = "io.github.janmalch" // must match verified namespace in Maven Central
-    version = "0.0.1-alpha.1"
+    version = "0.0.1-alpha.2"
 }
 
 nexusPublishing {

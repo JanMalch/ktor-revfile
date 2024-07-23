@@ -9,3 +9,7 @@ captures
 local.properties
 xcuserdata
 .kotlin
+
+# secret local workaround, while I'm struggling with the plugin :')
+.deploy
+deploy.sh
