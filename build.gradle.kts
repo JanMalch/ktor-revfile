@@ -13,6 +13,7 @@ plugins {
 // ./gradlew dokkaGenerate to generate docs for entire project
 dokka {
     moduleName.set("ktor-revfile")
+    moduleVersion.set(property("version") as String)
 }
 
 // https://kotlinlang.org/docs/dokka-migration.html#update-documentation-aggregation-in-multi-module-projects
