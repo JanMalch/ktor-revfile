@@ -5,6 +5,9 @@ plugins {
     alias(libs.plugins.publish) apply false
     alias(libs.plugins.bcv)
     alias(libs.plugins.dokka)
+    // for demo
+    alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.ktor) apply false
 }
 
 // ./gradlew dokkaGenerate to generate docs for entire project

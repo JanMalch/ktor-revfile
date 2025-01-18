@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "ktor-revfile"
 include(":ktor-revfile-core")
 include(":ktor-revfile-html")
+include(":demo")
