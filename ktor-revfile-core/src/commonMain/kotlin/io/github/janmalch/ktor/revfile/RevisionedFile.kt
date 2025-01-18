@@ -1,7 +1,7 @@
 package io.github.janmalch.ktor.revfile
 
-import io.ktor.http.*
-import io.ktor.http.content.*
+import io.ktor.http.ContentType
+import io.ktor.http.content.OutgoingContent
 
 /**
  * Describes a revisioned file, meaning its [path] is unique based on its content.
@@ -32,6 +32,10 @@ class RevisionedFile internal constructor(
      */
     val path: String,
     /**
+     * The original name of the file (without a revision), e.g. `main.js`.
+     */
+    val originalName: String,
+    /**
      * The generated weak ETag for this file, e.g. `W/"XHyohF/kGOwoCv4RWnG0Epk/njHhmJdiOntPLZiMhQE="`
      */
     internal val weakETag: String,
@@ -54,6 +58,6 @@ class RevisionedFile internal constructor(
     }
 
     override fun toString(): String {
-        return "RevisionedFile(path='$path', contentType=$contentType, integrity='$integrity')"
+        return "RevisionedFile(path='$path', contentType=$contentType, originalName='$originalName', integrity='$integrity')"
     }
 }

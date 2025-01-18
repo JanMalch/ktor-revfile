@@ -63,6 +63,7 @@ abstract class RevFileRegistry(path: String) : WriteableRevFileRegistry, Readabl
         val revFile = RevisionedFile(
             contentType = contentType.normalize(),
             path = path + name,
+            originalName = originalName,
             content = content,
             integrity = digest.integrity(),
             weakETag = digest.weakETag()
