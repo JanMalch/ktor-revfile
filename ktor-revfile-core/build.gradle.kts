@@ -1,7 +1,10 @@
 plugins {
-    id("module.publication")
-    id("kotlin-multiplatform-conventions")
+    id("conventions.kmp")
+    id("conventions.dokka")
+    id("conventions.publish")
 }
+
+description = "A Ktor server plugin made for automatically revisioning static files."
 
 dependencies {
     commonMainImplementation(libs.okio) // used for streaming hashes

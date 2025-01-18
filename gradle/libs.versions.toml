@@ -1,18 +1,17 @@
 [versions]
-bcv = "0.15.0-Beta.2"
-dokka = "1.9.20"
-kotlin = "2.0.0"
-kotlinx-html = "0.11.0"
-kover = "0.8.1"
+bcv = "0.17.0"
+dokka = "2.0.0"
+kotlin = "2.1.0"
+kotlinx-html = "0.12.0"
+kover = "0.9.1"
 ktor = "3.0.0-beta-2"
-nexus-publish = "2.0.0-rc-1" # FIXME: remove nexus
-okio = "3.9.0"
-io = "0.5.1"
-slf4j = "2.0.13"
+okio = "3.10.2"
+io = "0.6.0"
+slf4j = "2.0.16"
+publish = "0.30.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-nexus-publish = { module = "io.github.gradle-nexus.publish-plugin:io.github.gradle-nexus.publish-plugin.gradle.plugin", version.ref = "nexus-publish" }
 kotlinx-html = { module = "org.jetbrains.kotlinx:kotlinx-html", version.ref = "kotlinx-html" }
 kotlinx-io = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version.ref = "io" }
 ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
@@ -22,19 +21,21 @@ ktor-server-html-builder-jvm = { module = "io.ktor:ktor-server-html-builder-jvm"
 ktor-server-cio = { module = "io.ktor:ktor-server-cio", version.ref = "ktor" }
 ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
 ktor-utils = { module = "io.ktor:ktor-utils", version.ref = "ktor" }
+ktor-http = { module = "io.ktor:ktor-http", version.ref = "ktor" }
 okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
 slf4j-nop = { module = "org.slf4j:slf4j-nop", version.ref = "slf4j" } # just for annoying output in tests
 
 # Dependencies of the included build-logic
-kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
-kotlin-powerAssertPlugin = { group = "org.jetbrains.kotlin", name = "kotlin-power-assert", version.ref = "kotlin" }
-kotlinx-koverPlugin = { group = "org.jetbrains.kotlinx", name = "kover-gradle-plugin", version.ref = "kover" }
-dokkaPlugin = { group = "org.jetbrains.dokka", name = "dokka-gradle-plugin", version.ref = "dokka" }
-
+kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-power-assert-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-power-assert", version.ref = "kotlin" }
+kotlinx-kover-plugin = { group = "org.jetbrains.kotlinx", name = "kover-gradle-plugin", version.ref = "kover" }
+dokka-plugin = { group = "org.jetbrains.dokka", name = "dokka-gradle-plugin", version.ref = "dokka" }
+publish-plugin = { group = "com.vanniktech", name = "gradle-maven-publish-plugin", version.ref = "publish" }
 
 [plugins]
-kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-kotlinPowerAssert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "kotlin" }
-kotlinxKover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
+multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+power-assert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "kotlin" }
+kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 bcv = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "bcv" }
+publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }

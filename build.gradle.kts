@@ -1,36 +1,19 @@
-import org.jetbrains.dokka.DokkaConfiguration.Visibility
-import org.jetbrains.dokka.gradle.DokkaTaskPartial
-import java.net.URL
-
 plugins {
-    id("root.publication")
-    alias(libs.plugins.kotlinMultiplatform).apply(false)
-    alias(libs.plugins.kotlinPowerAssert).apply(false)
-    alias(libs.plugins.kotlinxKover).apply(false)
-    alias(libs.plugins.dokka)
+    alias(libs.plugins.multiplatform) apply false
+    alias(libs.plugins.power.assert) apply false
+    alias(libs.plugins.kover) apply false
+    alias(libs.plugins.publish) apply false
     alias(libs.plugins.bcv)
+    alias(libs.plugins.dokka)
 }
 
-subprojects {
-    apply(plugin = "org.jetbrains.dokka")
-
-    tasks.withType<DokkaTaskPartial>().configureEach {
-        dokkaSourceSets.configureEach {
-            includes.from(layout.projectDirectory.file(("README.md")))
-            documentedVisibilities.set(setOf(Visibility.PUBLIC, Visibility.PROTECTED))
-            externalDocumentationLink("https://api.ktor.io/")
-
-            sourceLink {
-                localDirectory.set(projectDir.resolve("src"))
-                remoteUrl.set(URL("https://github.com/janmalch/ktor-revfile/tree/main/${projectDir.name}/src"))
-                remoteLineSuffix.set("#L")
-            }
-        }
-    }
+// ./gradlew dokkaGenerate to generate docs for entire project
+dokka {
+    moduleName.set("ktor-revfile")
 }
 
-// Configures only the parent MultiModule task,
-// this will not affect subprojects
-tasks.dokkaHtmlMultiModule {
-    moduleName.set("Ktor RevFile")
+// https://kotlinlang.org/docs/dokka-migration.html#update-documentation-aggregation-in-multi-module-projects
+dependencies {
+    dokka(project(":ktor-revfile-core"))
+    dokka(project(":ktor-revfile-html"))
 }
