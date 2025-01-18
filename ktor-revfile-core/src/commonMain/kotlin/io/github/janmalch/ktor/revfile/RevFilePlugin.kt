@@ -1,15 +1,20 @@
 package io.github.janmalch.ktor.revfile
 
-import io.ktor.http.*
-import io.ktor.server.application.*
-import io.ktor.server.request.*
-import io.ktor.server.response.*
+import io.ktor.http.CacheControl
+import io.ktor.http.HttpHeaders
+import io.ktor.http.HttpStatusCode
+import io.ktor.server.application.createApplicationPlugin
+import io.ktor.server.request.header
+import io.ktor.server.request.path
+import io.ktor.server.response.header
+import io.ktor.server.response.respond
 import kotlin.jvm.JvmName
 import kotlin.time.Duration.Companion.days
 
 /**
  * Configuration options for the [RevFilePlugin].
  */
+@ConsistentCopyVisibility
 data class RevFileConfig internal constructor(
     /**
      * The [CacheControl] header value to be applied to every response handled by this plugin.
@@ -30,6 +35,9 @@ data class RevFileConfig internal constructor(
     internal var registry: ReadableRevFileRegistry = EmptyRegistry
         private set
 
+    /**
+     * Adds the [ReadableRevFileRegistry] to this [RevFileConfig].
+     */
     @JvmName("add")
     operator fun ReadableRevFileRegistry.unaryPlus() {
         registry += this
