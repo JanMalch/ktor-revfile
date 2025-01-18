@@ -20,3 +20,9 @@ dependencies {
     dokka(project(":ktor-revfile-core"))
     dokka(project(":ktor-revfile-html"))
 }
+
+// https://github.com/Kotlin/binary-compatibility-validator
+// ./gradlew apiDump to generate APIs for entire project
+apiValidation {
+    ignoredProjects += "demo"
+}

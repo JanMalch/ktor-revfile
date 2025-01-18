@@ -1,14 +1,53 @@
 public final class io/github/janmalch/ktor/revfile/html/HtmlKt {
+	public static final fun getUseJsModules (Lio/github/janmalch/ktor/revfile/RevFileConfig;)Z
 	public static final fun getUseSubresourceIntegrity (Lio/github/janmalch/ktor/revfile/RevFileConfig;)Z
-	public static final fun script (Lkotlinx/html/FlowOrMetaDataOrPhrasingContent;Lio/github/janmalch/ktor/revfile/RevisionedFile;Lkotlinx/html/ScriptCrossorigin;ZLkotlin/jvm/functions/Function1;)V
-	public static synthetic fun script$default (Lkotlinx/html/FlowOrMetaDataOrPhrasingContent;Lio/github/janmalch/ktor/revfile/RevisionedFile;Lkotlinx/html/ScriptCrossorigin;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun importMap (Lkotlinx/html/FlowOrMetaDataOrPhrasingContent;Lio/github/janmalch/ktor/revfile/html/ImportMap;)V
+	public static final fun importMap (Lkotlinx/html/FlowOrMetaDataOrPhrasingContent;[Lio/github/janmalch/ktor/revfile/RevisionedFile;Z)V
+	public static synthetic fun importMap$default (Lkotlinx/html/FlowOrMetaDataOrPhrasingContent;[Lio/github/janmalch/ktor/revfile/RevisionedFile;ZILjava/lang/Object;)V
+	public static final fun script (Lkotlinx/html/FlowOrMetaDataOrPhrasingContent;Lio/github/janmalch/ktor/revfile/RevisionedFile;Lkotlinx/html/ScriptCrossorigin;ZZLkotlin/jvm/functions/Function1;)V
+	public static synthetic fun script$default (Lkotlinx/html/FlowOrMetaDataOrPhrasingContent;Lio/github/janmalch/ktor/revfile/RevisionedFile;Lkotlinx/html/ScriptCrossorigin;ZZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun setUseJsModules (Lio/github/janmalch/ktor/revfile/RevFileConfig;Z)V
 	public static final fun setUseSubresourceIntegrity (Lio/github/janmalch/ktor/revfile/RevFileConfig;Z)V
 	public static final fun stylesheet (Lkotlinx/html/HEAD;Lio/github/janmalch/ktor/revfile/RevisionedFile;Lkotlinx/html/ScriptCrossorigin;ZLkotlin/jvm/functions/Function1;)V
 	public static synthetic fun stylesheet$default (Lkotlinx/html/HEAD;Lio/github/janmalch/ktor/revfile/RevisionedFile;Lkotlinx/html/ScriptCrossorigin;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 }
 
+public final class io/github/janmalch/ktor/revfile/html/ImportMap {
+	public static final field Companion Lio/github/janmalch/ktor/revfile/html/ImportMap$Companion;
+	public fun <init> ()V
+	public fun <init> (Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)V
+	public synthetic fun <init> (Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> ([Lio/github/janmalch/ktor/revfile/RevisionedFile;Z)V
+	public final fun component1 ()Ljava/util/Map;
+	public final fun component2 ()Ljava/util/Map;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun copy (Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)Lio/github/janmalch/ktor/revfile/html/ImportMap;
+	public static synthetic fun copy$default (Lio/github/janmalch/ktor/revfile/html/ImportMap;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/html/ImportMap;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getImports ()Ljava/util/Map;
+	public final fun getIntegrity ()Ljava/util/Map;
+	public final fun getScopes ()Ljava/util/Map;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public synthetic class io/github/janmalch/ktor/revfile/html/ImportMap$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lio/github/janmalch/ktor/revfile/html/ImportMap$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lio/github/janmalch/ktor/revfile/html/ImportMap;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lio/github/janmalch/ktor/revfile/html/ImportMap;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+}
+
+public final class io/github/janmalch/ktor/revfile/html/ImportMap$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
 public final class io/github/janmalch/ktor/revfile/html/RevFileHtml {
 	public static final field INSTANCE Lio/github/janmalch/ktor/revfile/html/RevFileHtml;
+	public final fun getUseJsModules ()Z
 	public final fun getUseSubresourceIntegrity ()Z
 }
 
