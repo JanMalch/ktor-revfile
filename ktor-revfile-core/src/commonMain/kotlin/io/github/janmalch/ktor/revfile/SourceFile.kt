@@ -10,12 +10,6 @@ import kotlinx.io.files.FileSystem
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemFileSystem
 
-private data class SourceEntry(
-    override val originalName: String,
-    override val contentType: ContentType,
-    override val content: OutgoingContent.ReadChannelContent,
-) : WriteableRevFileRegistry.Entry
-
 private class SourceOutgoingContent(
     private val content: () -> Source,
 ) : OutgoingContent.ReadChannelContent() {
@@ -32,7 +26,7 @@ fun WriteableRevFileRegistry.source(
     content: () -> Source,
 ): RevisionedFile {
     val outgoing = SourceOutgoingContent(content)
-    return SourceEntry(originalName, contentType, outgoing).let(this::register)
+    return register(originalName, contentType, outgoing)
 }
 
 /**
@@ -45,6 +39,6 @@ fun WriteableRevFileRegistry.source(
     fileSystem: FileSystem = SystemFileSystem,
 ): RevisionedFile {
     val outgoing = SourceOutgoingContent { fileSystem.source(path).buffered() }
-    return SourceEntry(originalName, contentType, outgoing).let(this::register)
+    return register(originalName, contentType, outgoing)
 }
 

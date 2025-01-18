@@ -1,15 +1,11 @@
 package io.github.janmalch.ktor.revfile
 
-import io.ktor.http.*
-import io.ktor.http.content.*
+import io.ktor.http.ContentType
+import io.ktor.http.content.URIFileContent
+import io.ktor.http.defaultForFilePath
 import java.net.URI
 import java.net.URL
 
-private data class UriEntry(
-    override val originalName: String,
-    override val contentType: ContentType,
-    override val content: OutgoingContent.ReadChannelContent,
-) : WriteableRevFileRegistry.Entry
 
 /**
  * Creates a new [RevisionedFile] from the given URI and adds it to this [WriteableRevFileRegistry].
@@ -18,11 +14,11 @@ fun WriteableRevFileRegistry.uri(
     uri: URI,
     name: String = uri.toString().substringAfterLast('/'),
     contentType: ContentType = ContentType.defaultForFilePath(uri.path),
-): RevisionedFile = UriEntry(
+): RevisionedFile = register(
     originalName = name,
     contentType = contentType,
     content = URIFileContent(uri, contentType),
-).let(this::register)
+)
 
 /**
  * Creates a new [RevisionedFile] from the given URL and adds it to this [WriteableRevFileRegistry].
@@ -83,6 +79,6 @@ fun WriteableRevFileRegistry.resource(
     return this.uri(
         uri = uri,
         name = name,
-        contentType = contentType ?: ContentType.defaultForFilePath(uri.path)
+        contentType = contentType,
     )
 }
