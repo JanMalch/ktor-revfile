@@ -1,6 +1,9 @@
 name: Deploy to central
 
-on: workflow_dispatch
+on:
+  push:
+    tags:
+      - 'v*'
 
 permissions:
   contents: read
