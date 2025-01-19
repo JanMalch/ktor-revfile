@@ -32,6 +32,7 @@ kotlin {
     tvosSimulatorArm64()
     tvosX64()
     tvosArm64()
+    mingwX64()
 
     dependencies {
         commonTestImplementation(libs.findLibrary("kotlin-test").get())
