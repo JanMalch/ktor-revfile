@@ -1,4 +1,4 @@
-public final class io/github/janmalch/ktor/revfile/LocalRegisterableFile_jvmKt {
+public final class io/github/janmalch/ktor/revfile/FileFileKt {
 	public static final fun file (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/io/File;Lio/ktor/http/ContentType;Ljava/lang/String;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
 	public static synthetic fun file$default (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/io/File;Lio/ktor/http/ContentType;Ljava/lang/String;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
 }
@@ -29,6 +29,7 @@ public final class io/github/janmalch/ktor/revfile/RevFilePluginKt {
 public abstract class io/github/janmalch/ktor/revfile/RevFileRegistry : io/github/janmalch/ktor/revfile/ReadableRevFileRegistry, io/github/janmalch/ktor/revfile/WriteableRevFileRegistry {
 	public fun <init> (Ljava/lang/String;)V
 	public final fun get (Ljava/lang/String;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
+	public final fun getBasePath ()Ljava/lang/String;
 	public final fun iterator ()Ljava/util/Iterator;
 	public final fun register (Ljava/lang/String;Lio/ktor/http/ContentType;Lio/ktor/http/content/OutgoingContent$ReadChannelContent;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
 	public final fun size ()I
@@ -50,7 +51,7 @@ public final class io/github/janmalch/ktor/revfile/SourceFileKt {
 	public static synthetic fun source$default (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Lkotlinx/io/files/Path;Lio/ktor/http/ContentType;Ljava/lang/String;Lkotlinx/io/files/FileSystem;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
 }
 
-public final class io/github/janmalch/ktor/revfile/UriRegisterableFile_jvmKt {
+public final class io/github/janmalch/ktor/revfile/UriFileKt {
 	public static final fun resource (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/lang/String;Ljava/lang/String;Lio/ktor/http/ContentType;Ljava/lang/ClassLoader;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
 	public static synthetic fun resource$default (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/lang/String;Ljava/lang/String;Lio/ktor/http/ContentType;Ljava/lang/ClassLoader;ILjava/lang/Object;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
 	public static final fun uri (Lio/github/janmalch/ktor/revfile/WriteableRevFileRegistry;Ljava/net/URI;Ljava/lang/String;Lio/ktor/http/ContentType;)Lio/github/janmalch/ktor/revfile/RevisionedFile;
