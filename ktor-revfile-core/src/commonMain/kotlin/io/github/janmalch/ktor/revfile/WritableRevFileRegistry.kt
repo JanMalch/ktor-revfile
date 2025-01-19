@@ -43,7 +43,10 @@ interface WriteableRevFileRegistry {
  * ```
  */
 abstract class RevFileRegistry(path: String) : WriteableRevFileRegistry, ReadableRevFileRegistry {
-    private val path: String = '/' + path.trim('/') + '/'
+    /**
+     * The base path for this registry.
+     */
+    val basePath: String = '/' + path.trim('/') + '/'
     private val files = mutableMapOf<String, RevisionedFile>()
 
     final override fun size(): Int = files.size
@@ -62,7 +65,7 @@ abstract class RevFileRegistry(path: String) : WriteableRevFileRegistry, Readabl
         val name = determineName(originalName, digest.revision())
         val revFile = RevisionedFile(
             contentType = contentType.normalize(),
-            path = path + name,
+            path = basePath + name,
             originalName = originalName,
             content = content,
             integrity = digest.integrity(),
@@ -74,5 +77,5 @@ abstract class RevFileRegistry(path: String) : WriteableRevFileRegistry, Readabl
     }
 
     final override fun iterator(): Iterator<RevisionedFile> = files.values.toTypedArray().iterator()
-    override fun toString(): String = "RevFileRegistry(path='$path', size=${size()})"
+    override fun toString(): String = "RevFileRegistry(basePath='$basePath', size=${size()})"
 }
