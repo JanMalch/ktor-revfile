@@ -33,5 +33,5 @@ jobs:
       run: ./gradlew assemble
     - name: Verify binary compatibility
       run: ./gradlew apiCheck
-    - name: JVM tests with Gradle
-      run: ./gradlew jvmTest
+    - name: Run tests with Gradle
+      run: ./gradlew allTests
