@@ -12,8 +12,8 @@ This enables optimal caching without you ever having to change the name of the l
 This library is available on Maven Central.
 
 ```kotlin
-implementation("io.github.janmalch:ktor-revfile-core:0.1.0")
-implementation("io.github.janmalch:ktor-revfile-html:0.1.0") // add for kotlinx.html interop
+implementation("io.github.janmalch:ktor-revfile-core:0.2.0")
+implementation("io.github.janmalch:ktor-revfile-html:0.2.0") // add for kotlinx.html interop
 ```
 
 ## Usage
