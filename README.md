@@ -1,6 +1,6 @@
 # Ktor RevFile
 
-![Maven Central Version](https://img.shields.io/maven-central/v/io.github.janmalch/ktor-revfile-core)
+[![Maven Central Version](https://img.shields.io/maven-central/v/io.github.janmalch/ktor-revfile-core)](https://central.sonatype.com/artifact/io.github.janmalch/ktor-revfile-core)
 
 A [Ktor server plugin](https://ktor.io/docs/server-plugins.html) made for automatically revisioning static files.
 
